@@ -2,12 +2,12 @@
     include '../api_permit.php';
     include '../conn.php';
 
-	$query 		= "select * from testcrud";
+	$query 		= "select * from testcrud ORDER BY id DESC";
 	$execute 	= mysqli_query($conn,$query);
 
 	$hasil = array();
 	while($row = mysqli_fetch_object($execute)){
-    	$dataFromDB = array("col1"=>'"'.$row->col1.'"',"col2"=>'"'.$row->col2.'"');
+    	$dataFromDB = array("id"=>$row->id,"col1"=>$row->col1,"col2"=>$row->col2);
 		array_push($hasil, $dataFromDB); 
 	}
 
