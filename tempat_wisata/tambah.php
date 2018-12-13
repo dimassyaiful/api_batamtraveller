@@ -7,7 +7,25 @@
 	$nama_tempat = $data->nama_tempat;
 	$alamat = $data->alamat;
 	$kategori = $data->kategori;
-	$foto_tempat = $data->foto_tempat;
+	
+	if($kategori == 'Pantai'){
+		$foto_tempat = 'pantai.jpg';
+	}elseif($kategori == 'Wisata Alam'){
+		$foto_tempat = 'alam.jpg';
+	}elseif($kategori == 'Budaya dan Sejarah'){
+		$foto_tempat = 'budaya.jpg';
+	}elseif($kategori == 'Museum'){
+		$foto_tempat = 'museum.jpg';
+	}elseif($kategori == 'Taman Hiburan'){
+		$foto_tempat = 'taman.jpg';
+	}elseif($kategori == 'Wisata Minat Khusus'){
+		$foto_tempat = 'minat.jpg';
+	}elseif($kategori == 'Restoran'){
+		$foto_tempat = 'restoran.jpg';
+	}else{
+		$foto_tempat = 'lainya.jpg';
+	}
+
 	$jam_buka = $data->jam_buka;
 	$jam_tutup = $data->jam_tutup;
 
