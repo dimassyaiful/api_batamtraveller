@@ -10,6 +10,7 @@
 	$foto_tempat = $data->foto_tempat;
 	$jam_buka = $data->jam_buka;
 	$jam_tutup = $data->jam_tutup;
+	$id_tempat = $data->id_tempat;
 
 	/* //cek data dikirim atau tidak
 	$br = " - ";
@@ -20,7 +21,7 @@
 	echo $br.$jam_buka;
 	echo $br.$jam_tutup; */
 
-	$query 		= "INSERT INTO tbl_tempat(nama_tempat,alamat,kategori,foto_tempat,jam_buka,jam_tutup) VALUES('".$nama_tempat."','".$alamat."','".$kategori."','".$foto_tempat."','".$jam_buka."','".$jam_tutup."')";
+	$query 		= "UPDATE tbl_tempat SET nama_tempat='".$nama_tempat."',alamat='".$alamat."',kategori='".$kategori."',foto_tempat='".$foto_tempat."',jam_buka='".$jam_buka."',jam_tutup='".$jam_tutup."' WHERE id_tempat = '".$id_tempat."'";
 	$execute 	= mysqli_query($conn,$query);
 	if($execute){
 		echo '1';
